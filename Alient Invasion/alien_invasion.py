@@ -10,7 +10,8 @@ from settings import Settings
 from ship import Ship
 from sound import Sound
 
-#TODO Create saving best records to file class, change static saving
+
+# TODO Create saving best records to file class, change static saving
 def run_game():
     pygame.init()
     pygame.mixer.init()
