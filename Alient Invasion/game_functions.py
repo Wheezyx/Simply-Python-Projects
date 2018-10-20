@@ -80,9 +80,9 @@ def update_bullets(ai_settings, screen, stats, sb, ship, aliens, bullets, sound)
 
 def check_bullet_alien_collision(ai_settings, screen, stats, sb, ship, aliens, bullets, sound):
     collisions = pygame.sprite.groupcollide(bullets, aliens, True, True)
-
     if collisions:
-        sound.killed_sound.play()
+        print(collisions)
+     #   sound.killed_sound.play()
         for aliens in collisions.values():
             stats.score += ai_settings.alien_points * len(aliens)
             sb.prep_score()
@@ -91,7 +91,7 @@ def check_bullet_alien_collision(ai_settings, screen, stats, sb, ship, aliens, b
         bullets.empty()
         ai_settings.increase_speed()
         stats.level += 1
-        sound.level_up_sound.play()
+        #sound.level_up_sound.play()
         sleep(2)
         sb.prep_level()
 
@@ -101,7 +101,7 @@ def check_bullet_alien_collision(ai_settings, screen, stats, sb, ship, aliens, b
 def fire_bullet(ai_settings, screen, ship, bullets, sound):
     if len(bullets) < ai_settings.bullets_allowed:
         new_bullet = Bullet(ai_settings, screen, ship)
-        sound.shoot_sound.play()
+       # sound.shoot_sound.play()
         bullets.add(new_bullet)
 
 
@@ -165,7 +165,7 @@ def ship_hit(ai_settings, stats, screen, sb, ship, aliens, bullets, sound):
         bullets.empty()
         create_fleet(ai_settings, screen, ship, aliens)
         ship.center_ship()
-        sound.lose_ship_sound.play()
+        #sound.lose_ship_sound.play()
         sleep(2)
     else:
         stats.game_active = False
