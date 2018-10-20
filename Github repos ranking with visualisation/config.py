@@ -17,4 +17,4 @@ def get_pygal_config():
 
 
 def get_chart_style(style):
-    return DGBS if style == 'W' else BS
+    return DGBS if style == 'D' else BS
